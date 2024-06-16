@@ -8,10 +8,12 @@ const tripsController = require('../controllers/trips');
 router
     .route('/trips')
     .get(tripsController.tripsList); // GET Method routes tripList
+    .post(tripsController.tripsAddTrip); // PoOST Method Adds a Trip
 
 // GET Method routes tripsFindByCode - requires parameter
 router
     .route('/trips/:tripCode')
-    .get(tripsController.tripsFindByCode);
+    .get(tripsController.tripsFindByCode)
+    .put(tripsController.tripsFindByCode);
     
 module.exports = router; 
